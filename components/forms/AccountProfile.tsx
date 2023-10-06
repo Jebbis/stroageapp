@@ -74,7 +74,7 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
                     width={96}
                     height={96}
                     priority
-                    className="rounded-full object-containd"
+                    className="rounded-full object-contain"
                   />
                 ) : (
                   <Image
