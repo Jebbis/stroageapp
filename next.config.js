@@ -1,5 +1,4 @@
 /** @type {import('next').NextConfig} */
-<<<<<<< HEAD
 const nextConfig = {
   experimental: {
     serverActions: true,
@@ -33,8 +32,3 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
-=======
-const nextConfig = {}
-
-module.exports = nextConfig
->>>>>>> 4881d4679a37574ca05964e075529eb0e5c5c8df
