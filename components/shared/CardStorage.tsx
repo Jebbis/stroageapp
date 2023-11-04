@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Button } from "../ui/button";
+
 const getStorage = async () => {
   console.log("getStorage start");
   try {
@@ -34,23 +36,9 @@ export default async function CardStorage() {
                   <p className="leading-relaxed text-base text-white dark:text-gray-300">
                     Storage Size: {t.varastonkoko} %
                   </p>
-                  <a
-                    href="#"
-                    className=" text-light-2 hover:text-red-500 inline-flex items-center border-2 rounded-lg p-3 mt-5"
-                  >
-                    More details
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      className="w-4 h-4 ml-2"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M5 12h14M12 5l7 7-7 7"></path>
-                    </svg>
-                  </a>
+                  <Button size="sm" className="community-card_btn mt-5">
+                    View
+                  </Button>
                 </div>
               ))}
             </div>

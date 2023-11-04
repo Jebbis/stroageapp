@@ -6,7 +6,7 @@ export const sidebarLinks = [
   },
   {
     imgURL: "/assets/search.svg",
-    route: "/search",
+    route: "/storages",
     label: "Storages",
   },
   {
@@ -34,4 +34,69 @@ export const placeholderStorages = [
   { name: "Storage 3", id: 3, storageSize: 55 },
   { name: "Storage 4", id: 4, storageSize: 80 },
   { name: "Storage 5", id: 5, storageSize: 23 },
+];
+
+export const placeStorages = [
+  {
+    asiakas: "Matti",
+    id: "1",
+    varastot: [
+      {
+        nimi: "Espoo",
+        varastonkoko: 20,
+        viimejakelu: "20.12.2023",
+      },
+      {
+        nimi: "TestEspoo",
+        varastonkoko: 20,
+        viimejakelu: "20.12.2023",
+      },
+      {
+        nimi: "Kirkkonummi",
+        varastonkoko: 20,
+        viimejakelu: "20.12.2023",
+      },
+      {
+        nimi: "Rovaniemi",
+        varastonkoko: 20,
+        viimejakelu: "20.12.2023",
+      },
+    ],
+  },
+  {
+    asiakas: "Ismo",
+    id: "2",
+
+    varastot: [
+      {
+        nimi: "Helsinki",
+        varastonkoko: 40,
+        viimejakelu: "05.08.2023",
+      },
+    ],
+  },
+  {
+    asiakas: "Tuula",
+    id: "3",
+
+    varastot: [
+      {
+        nimi: "Joku",
+        varastonkoko: 80,
+        viimejakelu: "16.03.2023",
+      },
+    ],
+  },
+  {
+    asiakas: "Seppo",
+    id: "4",
+
+    varastot: [
+      {
+        nimi: "Ryasda",
+        varastonkoko: 50,
+        viimejakelu: "31.11.2023",
+      },
+    ],
+  },
 ];
