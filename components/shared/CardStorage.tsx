@@ -24,8 +24,10 @@ function CardStorage() {
                   Storage Size: {storage.storageSize} %
                 </p>
                 <a
+                  /* TÄHÄN LINKKI YKSITTÄISELLE VARASTOLLE */
                   href="#"
-                  className="mt-3 text-light-2 hover:text-red-500 inline-flex items-center border-2 rounded-lg p-3 mt-5"
+                  /* TÄHÄN LINKKI YKSITTÄISELLE VARASTOLLE */
+                  className=" text-light-2 hover:text-red-500 inline-flex items-center border-2 rounded-lg p-3 mt-5"
                 >
                   More details
                   <svg
