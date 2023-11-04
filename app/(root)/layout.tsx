@@ -11,8 +11,8 @@ import { ClerkProvider } from "@clerk/nextjs";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "threads",
-  description: "A Next.js 13",
+  title: "Storage App",
+  description: "Storage",
 };
 
 export default function RootLayout({
@@ -28,7 +28,7 @@ export default function RootLayout({
           <main className="flex flex-row">
             <LeftSidebar />
             <section className="main-container">
-              <div className="w-full max-w-4xl">{children}</div>
+              <div className="w-full max-w-7xl">{children}</div>
             </section>
             <RightSidebar />
           </main>
