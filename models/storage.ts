@@ -2,12 +2,13 @@ import mongoose, { Schema } from "mongoose";
 
 const storageSchema = new Schema(
     {
-        asiakas: String,
-        varastot: [
+        clientName: String,
+        storages: [
             {
-                nimi: String,
-                varastonkoko: Number,
-                viimejakelu: String
+                storageName: String,
+                storageCapacity: Number,
+                lastDelivery: String,
+                details: String
             }
         ]
     }

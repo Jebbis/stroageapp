@@ -4,7 +4,7 @@ async function OverviewCard() {
   const storages = await fetchStorage();
   let storagesTotal = 0;
   let storageAverage = 0;
-  storages.map((amount) => storagesTotal = storagesTotal + amount.varastot.length);
+  storages.map((amount) => storagesTotal = storagesTotal + amount.storages.length);
 
   return (
     <div className="flex flex-wrap mt-10 gap-7 ">

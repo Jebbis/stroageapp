@@ -21,11 +21,11 @@ async function Page() {
           <p className="no-result">No Result</p>
         ) : (
           <>
-            {placeStorages.map((asiakas) =>
-              asiakas.storages.map((varasto) => (
+            {placeStorages.map((clientName) =>
+              clientName.storages.map((varasto) => (
                 <StorageCard
-                  client={asiakas.clientName}
-                  id={asiakas.clientId}
+                  client={clientName.clientName}
+                  id={clientName.clientId}
                   key={varasto.storageName}
                   name={varasto.storageName}
                   capacity={varasto.storageCapacity}

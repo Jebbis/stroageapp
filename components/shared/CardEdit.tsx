@@ -3,9 +3,9 @@ import { updateStorage, fetchDetails } from "@/lib/actions/storage.actions";
 
 async function myFunction(
   id: string,
-  asiakas: string
+  clientName: string
 ) {
-  await updateStorage(id, asiakas);
+  await updateStorage(id, clientName);
   window.location.href = "edit/" + id;
 }
 
@@ -19,27 +19,27 @@ async function CardEdit(id) {
         <div className="flex rounded-xl h-full dark:bg-gray-800 bg-dark-2 p-8 flex-col">
           <div className="flex items-center mb-3">
             <h2 className="text-white dark:text-white text-lg font-medium">
-              Storage ID: {storage.asiakas}
+              Storage ID: {storage.clientName}
             </h2>
             <div className=" ml-5 w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-green-500 text-white flex-shrink-0"></div>
           </div>
-          {storage.varastot.map((t) =>
+          {storage.storages.map((t) =>
             <div className="flex flex-col justify-between flex-grow">
               <p className="leading-relaxed text-base text-white dark:text-gray-300">
-                Name: {t.nimi}
+                Name: {t.storageName}
               </p>
               <p className="leading-relaxed text-base text-white dark:text-gray-300">
-                Storage size: {t.varastonkoko} %
+                Storage size: {t.storageCapacity} %
               </p>
               <p className="leading-relaxed text-base text-white dark:text-gray-300">
-                Last delivery: {t.viimejakelu}
+                Last delivery: {t.lastDelivery}
               </p>
             </div>
           )}
           <a
             onClick={() => myFunction(
               storage._id,
-              storage.asiakas
+              storage.clientName
             )}
             className="mt-3 text-light-2 hover:text-red-500 inline-flex items-center border-2 rounded-lg p-3 mt-5"
           >

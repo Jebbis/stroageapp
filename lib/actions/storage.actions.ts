@@ -20,19 +20,19 @@ export async function fetchDetails(id) {
 
     return storages;
 }
-export async function updateStorage(id, asiakas) {
+export async function updateStorage(id, clientName) {
     connectMongoDB();
 
     const storageQuery = Storage.findOneAndUpdate(
-        { asiakas: asiakas },
+        { clientName: clientName },
         {
             $set: {
-                "asiakas": "Asiakas 12",
-                "varastot": [
+                "clientName": "clientName 12",
+                "storages": [
                     {
-                        "nimi": "Espoo2",
-                        "varastonkoko": 202,
-                        "viimejakelu": "12.10.20222",
+                        "storageName": "Espoo2",
+                        "storageCapacity": 202,
+                        "lastDelivery": "12.10.20222",
                     }
                 ]
             }
