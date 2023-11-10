@@ -3,7 +3,7 @@
 import React from "react";
 import { fetchStorage } from "@/lib/actions/storage.actions";
 import { Button } from "../ui/button";
-
+import StorageCard from "@/components/cards/StorageCard";
 function redirect(path) {
   window.location.href = "details/" + path;
 }
