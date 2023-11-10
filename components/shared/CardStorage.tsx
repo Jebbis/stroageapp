@@ -5,7 +5,6 @@ import { fetchStorage } from "@/lib/actions/storage.actions";
 
 async function CardStorage() {
   const storages = await fetchStorage();
-  let storagesAmount = 0;
   return (
     <div>
       <div className="text-light-1 flex flex-wrap mt-10 gap-5">
