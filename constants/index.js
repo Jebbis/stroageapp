@@ -10,6 +10,11 @@ export const sidebarLinks = [
     label: "Storages",
   },
   {
+    imgURL: "/assets/create.svg",
+    route: "/create-storage",
+    label: "Create storage",
+  },
+  {
     imgURL: "/assets/user.svg",
     route: "/profile",
     label: "Profile",
@@ -38,64 +43,68 @@ export const placeholderStorages = [
 
 export const placeStorages = [
   {
-    asiakas: "Matti",
-    id: "1",
-    varastot: [
+    clientName: "Matti",
+    clientId: "1",
+    storages: [
       {
-        nimi: "Espoo",
-        varastonkoko: 20,
-        viimejakelu: "20.12.2023",
+        storageName: "Espoo",
+        storageCapacity: 20,
+        lastDelivery: "20.12.2023",
+        details: "",
       },
       {
-        nimi: "TestEspoo",
-        varastonkoko: 20,
-        viimejakelu: "20.12.2023",
+        storageName: "TestEspoo",
+        storageCapacity: 20,
+        lastDelivery: "20.12.2023",
+        details: "",
       },
       {
-        nimi: "Kirkkonummi",
-        varastonkoko: 20,
-        viimejakelu: "20.12.2023",
+        storageName: "Kirkkonummi",
+        storageCapacity: 20,
+        lastDelivery: "20.12.2023",
+        details: "",
       },
       {
-        nimi: "Rovaniemi",
-        varastonkoko: 20,
-        viimejakelu: "20.12.2023",
-      },
-    ],
-  },
-  {
-    asiakas: "Ismo",
-    id: "2",
-
-    varastot: [
-      {
-        nimi: "Helsinki",
-        varastonkoko: 40,
-        viimejakelu: "05.08.2023",
+        storageName: "Rovaniemi",
+        storageCapacity: 20,
+        lastDelivery: "20.12.2023",
+        details: "",
       },
     ],
   },
   {
-    asiakas: "Tuula",
-    id: "3",
-
-    varastot: [
+    clientName: "Ismo",
+    clientId: "2",
+    storages: [
       {
-        nimi: "Joku",
-        varastonkoko: 80,
-        viimejakelu: "16.03.2023",
+        storageName: "Helsinki",
+        storageCapacity: 40,
+        lastDelivery: "05.08.2023",
+        details: "",
       },
     ],
   },
   {
-    asiakas: "Seppo",
-    id: "4",
-
-    varastot: [
+    clientName: "Tuula",
+    clientId: "3",
+    storages: [
       {
-        nimi: "Ryasda",
-        varastonkoko: 50,
-        viimejakelu: "31.11.2023",
+        storageName: "Joku",
+        storageCapacity: 80,
+        lastDelivery: "16.03.2023",
+        details: "",
+      },
+    ],
+  },
+  {
+    clientName: "Seppo",
+    clientId: "4",
+    storages: [
+      {
+        storageName: "Ryasda",
+        storageCapacity: 50,
+        lastDelivery: "31.11.2023",
+        details: "",
       },
     ],
   },

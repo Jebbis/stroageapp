@@ -22,14 +22,14 @@ async function Page() {
         ) : (
           <>
             {placeStorages.map((asiakas) =>
-              asiakas.varastot.map((varasto) => (
+              asiakas.storages.map((varasto) => (
                 <StorageCard
-                  key={varasto.nimi}
-                  id={asiakas.id}
-                  name={varasto.nimi}
-                  client={asiakas.asiakas}
-                  capacity={varasto.varastonkoko}
-                  lastDelivery={varasto.viimejakelu}
+                  client={asiakas.clientName}
+                  id={asiakas.clientId}
+                  key={varasto.storageName}
+                  name={varasto.storageName}
+                  capacity={varasto.storageCapacity}
+                  lastDelivery={varasto.lastDelivery}
                 />
               ))
             )}
