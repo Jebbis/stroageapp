@@ -1,44 +1,34 @@
 "use server";
 
-
 import React from "react";
 import { fetchStorage } from "@/lib/actions/storage.actions";
 import { Button } from "../ui/button";
-
+import StorageCard from "@/components/cards/StorageCard";
 
 async function CardStorage() {
   const storages = await fetchStorage();
   return (
     <div>
-      <div className="text-light-1 flex flex-wrap mt-10 gap-5">
-        {storages.map((storage) => (
-          <div key={storage._id} className="p-4 max-w-sm">
-            <div className="flex rounded-xl h-full dark:bg-gray-800 bg-dark-2 p-8 flex-col">
-              <div className="flex items-center mb-3">
-                <h2 className="text-white dark:text-white text-lg font-medium">
-                  Asiakas: {storage.asiakas}
-                </h2>
-                <div className=" ml-5 w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-green-500 text-white flex-shrink-0"></div>
-              </div>
-
-              {storage.varastot.map((t) => (
-                <div className="flex flex-col justify-between flex-grow">
-                  <p className="leading-relaxed text-base text-white dark:text-gray-300">
-                    Name: {t.nimi}
-                  </p>
-                  <p className="leading-relaxed text-base text-white dark:text-gray-300">
-                    Storage Size: {t.varastonkoko} %
-                  </p>
-                  <Button size="sm" className="community-card_btn mt-5">
-                    View
-                  </Button>
-                </div>
-              ))}
-
-            </div>
-          </div>
-        ))}
-      </div>
+      <section className="mt-9 flex flex-wrap gap-4 p-4">
+        {storages.length === 0 ? (
+          <p className="no-result">No Result</p>
+        ) : (
+          <>
+            {storages.map((client) =>
+              client.varastot.map((storage) => (
+                <StorageCard
+                  client={client.asiakas}
+                  id={client._id}
+                  key={storage.nimi}
+                  name={storage.nimi}
+                  capacity={storage.varastonkoko}
+                  lastDelivery={storage.viimejakelu}
+                />
+              ))
+            )}
+          </>
+        )}
+      </section>
     </div>
   );
 }
