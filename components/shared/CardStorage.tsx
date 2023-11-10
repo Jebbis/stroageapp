@@ -1,7 +1,10 @@
 "use server";
 
+
 import React from "react";
 import { fetchStorage } from "@/lib/actions/storage.actions";
+import { Button } from "../ui/button";
+
 
 async function CardStorage() {
   const storages = await fetchStorage();
@@ -17,28 +20,21 @@ async function CardStorage() {
                 </h2>
                 <div className=" ml-5 w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-green-500 text-white flex-shrink-0"></div>
               </div>
-              <div className="flex flex-col justify-between flex-grow">
-                <p className="leading-relaxed text-base text-white dark:text-gray-300">
-                  Storages: {storage.varastot.length}
-                </p>
-                <a
-                  href={"details/" + storage._id}
-                  className="mt-3 text-light-2 hover:text-red-500 inline-flex items-center border-2 rounded-lg p-3 mt-5"
-                >
-                  More details
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    className="w-4 h-4 ml-2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </a>
-              </div>
+
+              {storage.varastot.map((t) => (
+                <div className="flex flex-col justify-between flex-grow">
+                  <p className="leading-relaxed text-base text-white dark:text-gray-300">
+                    Name: {t.nimi}
+                  </p>
+                  <p className="leading-relaxed text-base text-white dark:text-gray-300">
+                    Storage Size: {t.varastonkoko} %
+                  </p>
+                  <Button size="sm" className="community-card_btn mt-5">
+                    View
+                  </Button>
+                </div>
+              ))}
+
             </div>
           </div>
         ))}
