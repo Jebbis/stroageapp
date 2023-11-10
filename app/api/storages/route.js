@@ -1,5 +1,5 @@
 import connectMongoDB from "../../../lib/mongodb";
-import Storage from "@/models/storage";
+import Storage from "@/models/storage.ts";
 import { NextResponse } from "next/server";
 
 export async function POST(request) {

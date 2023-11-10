@@ -1,6 +1,7 @@
 import { ClerkProvider, UserButton } from "@clerk/nextjs";
 import CardStorage from "@/components/shared/CardStorage";
 
+
 export default function Home() {
   return (
     <>
