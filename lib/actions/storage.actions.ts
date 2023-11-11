@@ -42,3 +42,10 @@ export async function updateStorage(id, clientName) {
     const storages = await storageQuery.exec();
     console.log("Updated")
 }
+export async function createStorage(storageData) {
+    connectMongoDB();
+
+    const storageQuery = await Storage.create(storageData);
+
+    console.log(storageQuery);
+}
