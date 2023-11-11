@@ -8,5 +8,3 @@ export const StorageValidation = z.object({
   lastDelivery: z.string(),
   details: z.string().max(1000, { message: "Max 1000 characters." }),
 });
-
-console.log("Zod Schema:", StorageValidation);
