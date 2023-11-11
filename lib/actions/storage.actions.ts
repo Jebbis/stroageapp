@@ -2,9 +2,9 @@
 
 import connectMongoDB from "@/lib/mongodb";
 import Storage from "@/models/storage";
+connectMongoDB();
 
 export async function fetchStorage() {
-    connectMongoDB();
 
     const storageQuery = Storage.find();
     const storages = await storageQuery.exec();
@@ -13,7 +13,6 @@ export async function fetchStorage() {
 
 }
 export async function fetchDetails(id) {
-    connectMongoDB();
 
     const storageQuery = Storage.findById(id.id);
     const storages = await storageQuery.exec();
@@ -21,7 +20,6 @@ export async function fetchDetails(id) {
     return storages;
 }
 export async function updateStorage(id, clientName) {
-    connectMongoDB();
 
     const storageQuery = Storage.findOneAndUpdate(
         { clientName: clientName },
@@ -43,7 +41,6 @@ export async function updateStorage(id, clientName) {
     console.log("Updated")
 }
 export async function createStorage(storageData) {
-    connectMongoDB();
 
     const storageQuery = await Storage.create(storageData);
 
