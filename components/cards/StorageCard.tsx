@@ -26,7 +26,7 @@ function CommunityCard({ id, client, name, capacity, lastDelivery }: Props) {
       </div>
 
       <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
-        <Link href={`/details/${id}`}>
+        <Link href={`/storages/${id}`}>
           <Button size="sm" className="community-card_btn">
             View
           </Button>
