@@ -28,8 +28,6 @@ function CreateStorage() {
 
     // Check if a client with the given clientID already exists
     const existingClientIndex = placeStorages.findIndex((client) => {
-      console.log("Database Entry - Client ID:", client.clientId);
-      console.log("Database Entry - Client Name:", client.clientName);
       return (
         client.clientId == clientId &&
         String(client.clientName).trim() == String(clientName).trim()
@@ -45,7 +43,6 @@ function CreateStorage() {
       // If the client doesn't exist, create a new entry with the provided data
       placeStorages.push({ clientName, clientId, storages });
     }
-    console.log(placeStorages);
   };
 
   const form = useForm<z.infer<typeof StorageValidation>>({

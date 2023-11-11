@@ -1,10 +1,7 @@
 import React from "react";
 import { updateStorage, fetchDetails } from "@/lib/actions/storage.actions";
 
-async function myFunction(
-  id: string,
-  clientName: string
-) {
+async function myFunction(id: string, clientName: string) {
   await updateStorage(id, clientName);
   window.location.href = "edit/" + id;
 }
@@ -23,7 +20,7 @@ async function CardEdit(id) {
             </h2>
             <div className=" ml-5 w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-green-500 text-white flex-shrink-0"></div>
           </div>
-          {storage.storages.map((t) =>
+          {storage.storages.map((t) => (
             <div className="flex flex-col justify-between flex-grow">
               <p className="leading-relaxed text-base text-white dark:text-gray-300">
                 Name: {t.storageName}
@@ -35,13 +32,10 @@ async function CardEdit(id) {
                 Last delivery: {t.lastDelivery}
               </p>
             </div>
-          )}
+          ))}
           <a
-            onClick={() => myFunction(
-              storage._id,
-              storage.clientName
-            )}
-            className="mt-3 text-light-2 hover:text-red-500 inline-flex items-center border-2 rounded-lg p-3 mt-5"
+            onClick={() => myFunction(storage._id, storage.clientName)}
+            className=" text-light-2 hover:text-red-500 inline-flex items-center border-2 rounded-lg p-3 mt-5"
           >
             More details
             <svg
