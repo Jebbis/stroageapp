@@ -34,7 +34,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/Mongodbtest/page.jsx"
+    "app/Mongodbtest/page.jsx",
+    "lib/mongodb.js"
   ],
   "exclude": [
     "node_modules"
