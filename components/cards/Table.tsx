@@ -12,13 +12,13 @@ import {
 import React from "react";
 import { userColumnDefs } from "./UserColumnDefs";
 import data from "../../users.json";
-import { Person } from "../../types/Person";
+import { Delivery } from "../../types/Delivery";
 import Pagination from "./Pagination";
 const Table = () => {
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const table = useReactTable({
     columns: userColumnDefs,
-    data: data as Person[],
+    data: data as Delivery[],
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
     //2.  add getPaginationRowModel
@@ -31,8 +31,8 @@ const Table = () => {
   const headers = table.getFlatHeaders();
   const rows = table.getRowModel().rows;
   return (
-    <div className=" text-light-2">
-      <table className="table table-zebra my-4 w-full">
+    <div className=" text-light-2 ">
+      <table className="table table-zebra my-4 w-full ">
         <thead>
           <tr>
             {headers.map((header) => {
