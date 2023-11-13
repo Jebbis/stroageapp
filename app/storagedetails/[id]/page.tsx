@@ -7,7 +7,7 @@ async function page({ params }: { params: { id: string } }) {
   return (
     <div>
       <h1 className="head-text text-left">Details</h1>
-      <CardDetails
+      <CardStorageDetails
         id={params.id}
       />
     </div>

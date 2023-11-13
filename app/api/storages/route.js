@@ -10,9 +10,20 @@ export async function POST(request) {
     return NextResponse.json({ message: "Client added", clientName: clientName });
 }
 
+// export async function GET() {
+//     await connectMongoDB();
+//     const storages = await Storage.find();
+//     console.log("Get request");
+//     return NextResponse.json({ storages });
+// }
 export async function GET() {
     await connectMongoDB();
-    const storages = await Storage.find();
-    console.log("Get request");
+    const objectIdToFind = "654e3236d81e04c7a4a0e579";
+    const storages = await Storage.find({
+        "storages._id": objectIdToFind
+    }, {
+        "storages.$": 1
+    });
+    console.log(JSON.stringify(storages));
     return NextResponse.json({ storages });
 }
