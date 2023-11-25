@@ -11,14 +11,15 @@ import {
 } from "@tanstack/react-table";
 import React from "react";
 import { userColumnDefs } from "./UserColumnDefs";
-import data from "../../users.json";
 import { Delivery } from "../../types/Delivery";
 import Pagination from "./Pagination";
-const Table = () => {
+
+const Table = (id) => {
+  let jsonData = id.id.slice(2, -2);
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const table = useReactTable({
     columns: userColumnDefs,
-    data: data as Delivery[],
+    data: JSON.parse(jsonData) as Delivery[],
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
     //2.  add getPaginationRowModel

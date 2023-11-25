@@ -19,17 +19,6 @@ export async function fetchDetails(id) {
     console.log(storages);
     return storages;
 }
-// export async function fetchStorageDetails(id) {
-
-//     const objectIdToFind = "654e3236d81e04c7a4a0e579";
-//     const storages = await Storage.find({
-//         "storages._id": objectIdToFind
-//     }, {
-//         "storages.$": 1
-//     });
-//     console.log(JSON.stringify(storages));
-//     return storages;
-// }
 export async function fetchStorageDetails(id) {
 
     const storageQuery = Storage.find({

@@ -1,6 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 
-const storageSchema = new Schema(
+const storageSchemaold = new Schema(
     {
         clientName: String,
         storages: [
@@ -13,6 +13,34 @@ const storageSchema = new Schema(
         ]
     }
 );
+
+const storageSchema = new Schema(
+    {
+        clientName: String,
+        clientNote: String,
+        storages: [
+            {
+                storageName: String,
+                storageCapacity: Number,
+                address: {
+                    streetName: String,
+                    city: String,
+                    postcode: String
+                },
+                deliveryInstructions: String,
+                note: String,
+                deliverys: [
+                    {
+                        deliveryId: String,
+                        deliveryDate: String,
+                        deliveryNote: String
+                    }
+                ]
+
+            }
+        ]
+    }
+)
 
 const Storage = mongoose.models.Storage || mongoose.model("Storage", storageSchema);
 

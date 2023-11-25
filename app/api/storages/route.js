@@ -3,10 +3,10 @@ import Storage from "@/models/storage.ts";
 import { NextResponse } from "next/server";
 
 export async function POST(request) {
-    const { clientName, storages } = await request.json();
+    const { clientName, clientNote, storages } = await request.json();
     await connectMongoDB();
     console.log("%j", request.json);
-    await Storage.create({ clientName, storages });
+    await Storage.create({ clientName, clientNote, storages });
     return NextResponse.json({ message: "Client added", clientName: clientName });
 }
 

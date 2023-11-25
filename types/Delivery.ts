@@ -1,5 +1,6 @@
 export type Delivery = {
-  delivery_id: string;
-  delivery_date: string;
-  delivery_note: string;
+  deliveryId: string;
+  deliveryDate: string;
+  deliveryNote: string;
+
 };

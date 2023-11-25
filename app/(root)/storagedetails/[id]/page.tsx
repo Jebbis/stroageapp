@@ -1,4 +1,4 @@
-import CardDetails from "@/components/shared/CardDetails";
+import DeliveryHistory from "@/components/cards/DeliveryHistory";
 import CardStorageDetails from "@/components/shared/CardStorageDetails";
 
 async function page({ params }: { params: { id: string } }) {
@@ -10,6 +10,7 @@ async function page({ params }: { params: { id: string } }) {
       <CardStorageDetails
         id={params.id}
       />
+      <DeliveryHistory id={params.id} />
     </div>
   );
 }

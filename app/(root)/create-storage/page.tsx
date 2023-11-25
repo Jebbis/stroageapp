@@ -12,7 +12,7 @@ async function Page() {
     <>
       <h1 className="head-text">Create New Storage</h1>
 
-      <CreateStorage />
+      <CreateStoragenew />
     </>
   );
 }

@@ -24,17 +24,18 @@ async function Page() {
           <p className="no-result">No Result</p>
         ) : (
           <>
-            {storages.map((clientName) =>
-              clientName.storages.map((varasto) => (
-                <StorageCard
-                  client={clientName.clientName}
-                  id={clientName._id}
-                  key={varasto.storageName}
-                  name={varasto.storageName}
-                  capacity={varasto.storageCapacity}
-                  lastDelivery={varasto.lastDelivery}
-                />
-              ))
+            {storages.map((storageObject) =>
+              storageObject.storages.map((storageArray) => (
+                storageArray.deliverys.map((deliveryArray) =>
+                  <StorageCard
+                    client={storageObject.clientName}
+                    id={storageObject._id}
+                    key={storageArray._id}
+                    name={storageArray.storageName}
+                    capacity={storageArray.storageCapacity}
+                    lastDelivery={deliveryArray.deliveryDate}
+                  />
+                )))
             )}
           </>
         )}

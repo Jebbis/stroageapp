@@ -1,30 +1,38 @@
 import React from "react";
 import { fetchStorageDetails } from "@/lib/actions/storage.actions";
+import DeliveryHistory from "@/components/cards/DeliveryHistory";
 
 async function CardDetails(id) {
   console.log("Fetching details for: " + id.id);
-  const storage = await fetchStorageDetails(id);
-
+  const storageObject = await fetchStorageDetails(id);
+  // {
+  //   storageObject.map((storageObject) => storageObject.storages.map((storageArray) => storageArray.deliverys.map((deliveryArray) =>
+  //     console.log(deliveryArray)
+  //   )))
+  // }
   return (
     <div>
       <div className="flex rounded-xl h-full dark:bg-gray-800 bg-dark-2 p-8 flex-col">
         <div className="flex items-center mb-3">
           <h2 className="text-white dark:text-white text-lg font-medium">
             <div className="flex flex-col justify-between flex-grow">
-              {storage.map((t) =>
-                t.storages.map((t) =>
+              {storageObject.map((storageObject) =>
+                storageObject.storages.map((storageArray) =>
                   <div>
                     <p className="leading-relaxed text-base text-white dark:text-gray-300">
-                      Name: {t.storageName}
+                      Name: {storageArray.storageName}
                     </p>
                     <p className="leading-relaxed text-base text-white dark:text-gray-300">
-                      Storage size: {t.storageCapacity} %
+                      Storage size: {storageArray.storageCapacity} %
                     </p>
                     <p className="leading-relaxed text-base text-white dark:text-gray-300">
-                      Last delivery: {t.lastDelivery}
+                      Location: {(storageArray.address.streetName + ", " + storageArray.address.city + ", " + storageArray.address.postcode)}
                     </p>
                     <p className="leading-relaxed text-base text-white dark:text-gray-300">
-                      Last delivery: {t.details}
+                      Delivery Instructions: {storageArray.deliveryInstructions}
+                    </p>
+                    <p className="leading-relaxed text-base text-white dark:text-gray-300">
+                      Note: {storageArray.note}
                     </p>
                   </div>
                 )

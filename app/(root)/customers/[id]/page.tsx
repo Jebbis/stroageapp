@@ -8,10 +8,9 @@ async function page({ params }: { params: { id: string } }) {
 
   return (
     <div>
-      <h1 className="head-text text-left">Details</h1>
+      <h1 className="head-text text-left">Customer Storages</h1>
       <CardCustomerDetails id={params.id} />
       <DetailsOverview id={params.id} />
-      <DeliveryHistory id={params.id} />
     </div>
   );
 }
