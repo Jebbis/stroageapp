@@ -50,9 +50,16 @@ export async function updateStorage(id, clientName) {
     const storages = await storageQuery.exec();
     console.log("Updated")
 }
-export async function createStorage(storageData) {
+export async function createStorage2(storageData) {
 
     const storageQuery = await Storage.create(storageData);
 
     console.log(storageQuery);
+}
+export async function createStorage(storageData) {
+
+    const storageQuery = await Storage.updateOne({ clientName: storageData.clientName }, storageData, { upsert: false });
+    console.log("ModifiedCount: " + storageQuery.modifiedCount);
+    console.log("MatchedCount: " + storageQuery.matchedCount);
+    console.log("ClientName: " + storageData.clientName);
 }

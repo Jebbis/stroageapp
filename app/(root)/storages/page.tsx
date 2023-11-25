@@ -26,16 +26,14 @@ async function Page() {
           <>
             {storages.map((storageObject) =>
               storageObject.storages.map((storageArray) => (
-                storageArray.deliverys.map((deliveryArray) =>
-                  <StorageCard
-                    client={storageObject.clientName}
-                    id={storageObject._id}
-                    key={storageArray._id}
-                    name={storageArray.storageName}
-                    capacity={storageArray.storageCapacity}
-                    lastDelivery={deliveryArray.deliveryDate}
-                  />
-                )))
+                <StorageCard
+                  client={storageObject.clientName}
+                  id={storageObject._id}
+                  key={storageArray._id}
+                  name={storageArray.storageName}
+                  capacity={storageArray.storageCapacity}
+                />
+              ))
             )}
           </>
         )}

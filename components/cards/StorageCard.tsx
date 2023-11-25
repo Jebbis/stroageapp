@@ -8,10 +8,9 @@ interface Props {
   client: string;
   name: string;
   capacity: number;
-  lastDelivery: string;
 }
 
-function CommunityCard({ id, key, client, name, capacity, lastDelivery }: Props) {
+function CommunityCard({ id, key, client, name, capacity }: Props) {
   return (
     <article className="community-card">
       <div className="flex flex-wrap items-center gap-3">
@@ -20,9 +19,6 @@ function CommunityCard({ id, key, client, name, capacity, lastDelivery }: Props)
 
           <p className="text-small-medium text-gray-1">@{client}</p>
           <p className="text-small-medium text-gray-1">Capacity: {capacity}%</p>
-          <p className="text-small-medium text-gray-1">
-            Last Delivery: {lastDelivery}
-          </p>
         </div>
       </div>
 
