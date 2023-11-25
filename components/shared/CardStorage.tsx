@@ -18,15 +18,14 @@ async function CardStorage() {
           <p className="no-result">No Result</p>
         ) : (
           <>
-            {storages.map((clientName) =>
-              clientName.storages.map((varasto) => (
+            {storages.map((storageObject) =>
+              storageObject.storages.map((storageArray) => (
                 <StorageCard
-                  client={clientName.clientName}
-                  id={clientName._id}
-                  key={varasto.storageName}
-                  name={varasto.storageName}
-                  capacity={varasto.storageCapacity}
-                  lastDelivery={varasto.lastDelivery}
+                  client={storageObject.clientName}
+                  id={storageArray._id}
+                  key={storageArray._id}
+                  name={storageArray.storageName}
+                  capacity={storageArray.storageCapacity}
                 />
               ))
             )}

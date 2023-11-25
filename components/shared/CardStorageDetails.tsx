@@ -17,7 +17,7 @@ async function CardDetails(id) {
           <h2 className="text-white dark:text-white text-lg font-medium">
             <div className="flex flex-col justify-between flex-grow">
               {storageObject.map((storageObject) =>
-                storageObject.storages.map((storageArray) =>
+                storageObject.storages.map((storageArray) => (
                   <div>
                     <p className="leading-relaxed text-base text-white dark:text-gray-300">
                       Name: {storageArray.storageName}
@@ -26,7 +26,12 @@ async function CardDetails(id) {
                       Storage size: {storageArray.storageCapacity} %
                     </p>
                     <p className="leading-relaxed text-base text-white dark:text-gray-300">
-                      Location: {(storageArray.address.streetName + ", " + storageArray.address.city + ", " + storageArray.address.postcode)}
+                      Location:{" "}
+                      {storageArray.address.streetName +
+                        ", " +
+                        storageArray.address.city +
+                        ", " +
+                        storageArray.address.postcode}
                     </p>
                     <p className="leading-relaxed text-base text-white dark:text-gray-300">
                       Delivery Instructions: {storageArray.deliveryInstructions}
@@ -35,11 +40,12 @@ async function CardDetails(id) {
                       Note: {storageArray.note}
                     </p>
                   </div>
-                )
+                ))
               )}
             </div>
           </h2>
-          <div className=" ml-5 w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-green-500 text-white flex-shrink-0"></div>
+          {/*           <div className=" ml-5 w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-green-500 text-white flex-shrink-0"></div>
+           */}{" "}
         </div>
         <a
           href={"/edit/"}

@@ -28,7 +28,7 @@ async function Page() {
               storageObject.storages.map((storageArray) => (
                 <StorageCard
                   client={storageObject.clientName}
-                  id={storageObject._id}
+                  id={storageArray._id}
                   key={storageArray._id}
                   name={storageArray.storageName}
                   capacity={storageArray.storageCapacity}

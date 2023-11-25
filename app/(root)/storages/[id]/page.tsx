@@ -1,7 +1,5 @@
 import DeliveryHistory from "@/components/cards/DeliveryHistory";
-import DetailsOverview from "@/components/cards/DetailsOverview";
-import CardCustomerDetails from "@/components/shared/CardCustomerDetails";
-import CardDetails from "@/components/shared/CardDetails";
+import CardStorageDetails from "@/components/shared/CardStorageDetails";
 
 async function page({ params }: { params: { id: string } }) {
   if (!params.id) return null;
@@ -9,8 +7,7 @@ async function page({ params }: { params: { id: string } }) {
   return (
     <div>
       <h1 className="head-text text-left">Details</h1>
-      <CardCustomerDetails id={params.id} />
-      <DetailsOverview id={params.id} />
+      <CardStorageDetails id={params.id} />
       <DeliveryHistory id={params.id} />
     </div>
   );
