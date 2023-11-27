@@ -17,7 +17,7 @@ function CommunityCard({ id, key, client, name, capacity }: Props) {
         <div>
           <h4 className="text-base-semibold text-light-1">{name}</h4>
 
-          <p className="text-small-medium text-gray-1">@{client}</p>
+          <p className="text-small-medium text-gray-1">Client: {client}</p>
           <p className="text-small-medium text-gray-1">Capacity: {capacity}%</p>
         </div>
       </div>
