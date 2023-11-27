@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <h1 className="head-text text-left">Overview</h1>
       <OverviewCard />
-      <h1 className="head-text text-left mt-10">Latest storages???</h1>
+      <h1 className="head-text text-left mt-10">Latest storages</h1>
       <CardStorage />
     </>
   );

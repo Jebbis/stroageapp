@@ -13,10 +13,10 @@ async function OverviewCard() {
       <div className="p-4 max-w-sm w-full">
         <div className="flex rounded-xl h-full bg-dark-2 p-8 flex-col">
           <div className="flex items-center flex-col">
-            <h2 className="text-white text-heading2-bold">
+            <h2 className="text-white text-heading3-bold">
               Varastoja yhteensä
             </h2>
-            <p className="leading-relaxed text-heading2-bold text-white ">
+            <p className="leading-relaxed text-heading3-bold text-white ">
               {storagesTotal}
             </p>
           </div>
@@ -25,8 +25,8 @@ async function OverviewCard() {
       <div className="p-4 max-w-sm w-full">
         <div className="flex rounded-xl h-full bg-dark-2 p-8 flex-col">
           <div className="flex items-center flex-col">
-            <h2 className="text-white text-heading2-bold">Varastojen %</h2>
-            <p className="leading-relaxed text-heading2-bold text-white ">
+            <h2 className="text-white text-heading3-bold">Varastojen </h2>
+            <p className="leading-relaxed text-heading3-bold text-white ">
               50%
             </p>
           </div>
@@ -35,9 +35,9 @@ async function OverviewCard() {
       <div className="p-4 max-w-sm w-full">
         <div className="flex rounded-xl h-full  bg-dark-2 p-8 flex-col">
           <div className="flex items-center flex-col">
-            <h2 className="text-white text-heading2-bold">Jotain</h2>
-            <p className="leading-relaxed text-heading2-bold text-white ">
-              xxx
+            <h2 className="text-white text-heading3-bold">Seuraava toimitus</h2>
+            <p className="leading-relaxed text-heading3-bold text-white ">
+              28.11.2023
             </p>
           </div>
         </div>
