@@ -10,11 +10,6 @@ export const sidebarLinks = [
     label: "Storages",
   },
   {
-    imgURL: "/assets/create.svg",
-    route: "/create-storage",
-    label: "Create storage",
-  },
-  {
     imgURL: "/assets/user.svg",
     route: "/customers",
     label: "Customers",

@@ -17,7 +17,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { StorageValidation } from "@/lib/validations/customer";
-import { createStorage } from "@/lib/actions/storage.actions";
+import { createCustomer } from "@/lib/actions/storage.actions";
 
 function CreateCustomer() {
   const router = useRouter();
@@ -41,9 +41,9 @@ function CreateCustomer() {
 
       console.log("Storage Data:", storageData);
 
-      createStorage(storageData);
+      createCustomer(storageData);
 
-      router.push("/storages");
+      router.push("/customers");
     } catch (error) {
       if (error instanceof z.ZodError) {
         // Log Zod validation errors

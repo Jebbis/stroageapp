@@ -1,12 +1,15 @@
 import { currentUser } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
-
 import CreateStorage from "@/components/forms/CreateStorage";
 import CreateStoragenew from "@/components/forms/CreateStorage mongo version";
 
-async function Page() {
+async function Page(id) {
   const user = await currentUser();
+  console.log("Received params: " + id)
+
   if (!user) return null;
+
+  if (!id) id = "";
 
   return (
     <>

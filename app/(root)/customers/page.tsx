@@ -10,7 +10,6 @@ import { Button } from "@/components/ui/button";
 
 async function Page() {
   const storages = await fetchStorage();
-  let storagesTotal = 0;
   return (
     <>
       <h1 className="head-text">Customers</h1>

@@ -13,10 +13,9 @@ export async function fetchStorage() {
 
 }
 export async function fetchDetails(id) {
-
+    console.log(id)
     const storageQuery = Storage.findById(id.id);
     const storages = await storageQuery.exec();
-    console.log(storages);
     return storages;
 }
 export async function fetchStorageDetails(id) {
@@ -25,41 +24,47 @@ export async function fetchStorageDetails(id) {
         "storages._id": id.id
     },
         { "storages.$": 1 });
-    //const storages = await Storage.find(objectIdToFind).populate("storages")
     const storages = await storageQuery.exec();
     return storages;
 }
-export async function updateStorage(id, clientName) {
+export async function updateStorage(id, storageData) {
 
     const storageQuery = Storage.findOneAndUpdate(
-        { clientName: clientName },
+        { "storages._id": id },
         {
             $set: {
-                "clientName": "clientName 12",
                 "storages": [
                     {
-                        "storageName": "Espoo2",
-                        "storageCapacity": 202,
-                        "lastDelivery": "12.10.20222",
+                        "storageName": storageData.storageName,
+                        "storageCapacity": storageData.storageCapacity,
+                        "address": {
+                            "streetName": storageData.address.streetName,
+                            "city": storageData.address.city,
+                            "postcode": storageData.address.postcode
+                        },
+                        "deliveryInstructions": storageData.deliveryInstructions,
+                        "note": storageData.note,
                     }
                 ]
             }
         }
 
     );
-    const storages = await storageQuery.exec();
-    console.log("Updated")
+    const storage = await storageQuery.exec();
+    console.log("ModifiedCount: " + storage.modifiedCount);
+    console.log("MatchedCount: " + storage.matchedCount);
+    console.log("Updated: " + id)
 }
-export async function createStorage2(storageData) {
+export async function createCustomer(storageData) {
 
     const storageQuery = await Storage.create(storageData);
 
     console.log(storageQuery);
 }
-export async function createStorage(storageData) {
+export async function createStorage(storageData, clientName) {
 
-    const storageQuery = await Storage.updateOne({ clientName: storageData.clientName }, storageData, { upsert: false });
+    const storageQuery = await Storage.updateOne({ clientName: clientName }, { $push: { storages: storageData } }, { upsert: false });
     console.log("ModifiedCount: " + storageQuery.modifiedCount);
     console.log("MatchedCount: " + storageQuery.matchedCount);
-    console.log("ClientName: " + storageData.clientName);
+    console.log("ClientName: " + clientName);
 }

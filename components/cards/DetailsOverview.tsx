@@ -1,5 +1,8 @@
 import { fetchDetails } from "@/lib/actions/storage.actions";
 
+
+//{storage.storages[0].storageCapacity}
+//{storage.storages[0].lastDelivery}
 async function DetailsOverview(id) {
   const storage = await fetchDetails(id);
 
@@ -10,7 +13,7 @@ async function DetailsOverview(id) {
           <div className="flex items-center flex-col">
             <h2 className="text-white text-heading2-bold">Capacity</h2>
             <p className="leading-relaxed text-heading2-bold text-white ">
-              {storage.storages[0].storageCapacity}
+
             </p>
           </div>
         </div>
@@ -20,7 +23,7 @@ async function DetailsOverview(id) {
           <div className="flex items-center flex-col">
             <h2 className="text-white text-heading2-bold">Last Delivery</h2>
             <p className="leading-relaxed text-heading2-bold text-white ">
-              {storage.storages[0].lastDelivery}
+
             </p>
           </div>
         </div>

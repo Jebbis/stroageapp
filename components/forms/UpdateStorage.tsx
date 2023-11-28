@@ -17,26 +17,32 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { StorageValidation } from "@/lib/validations/storagemongo";
-import { createStorage } from "@/lib/actions/storage.actions";
+import { updateStorage } from "@/lib/actions/storage.actions";
 
 interface Props {
   id: string;
   client: string;
-  storages: number;
+  storageName: string;
+  storageCapacity: string;
+  streetName: string;
+  city: string;
+  postcode: string;
+  deliveryInstructions: string;
+  note: string;
 }
 
-function CreateStorage({ id, client, storages }: Props) {
+function UpdateStorage({ id, client, storageName, storageCapacity, streetName, city, postcode, deliveryInstructions, note }: Props) {
   const router = useRouter();
   const form = useForm<z.input<typeof StorageValidation>>({
     resolver: zodResolver(StorageValidation),
     defaultValues: {
-      storageName: "",
-      storageCapacity: "",
-      streetName: "",
-      city: "",
-      postcode: "",
-      deliveryInstructions: "",
-      note: "",
+      storageName: storageName,
+      storageCapacity: storageCapacity,
+      streetName: streetName,
+      city: city,
+      postcode: postcode,
+      deliveryInstructions: deliveryInstructions,
+      note: note,
     },
   });
 
@@ -54,10 +60,10 @@ function CreateStorage({ id, client, storages }: Props) {
         deliveryInstructions: values.deliveryInstructions,
         note: values.note,
       };
+      console.log(storageData);
+      updateStorage(id, storageData);
 
-      createStorage(storageData, client);
-
-      router.push("/customers/" + id);
+      router.push("/customers");
     } catch (error) {
       if (error instanceof z.ZodError) {
         // Log Zod validation errors
@@ -83,7 +89,7 @@ function CreateStorage({ id, client, storages }: Props) {
                 Storage Name
               </FormLabel>
               <FormControl>
-                <Input type="text" placeholder="Storage name usually by street name" className="account-form_input" {...field} />
+                <Input type="text" placeholder={storageName} className="account-form_input" {...field} />
               </FormControl>
             </FormItem>
           )}
@@ -97,7 +103,7 @@ function CreateStorage({ id, client, storages }: Props) {
                 Storage Capacity
               </FormLabel>
               <FormControl>
-                <Input type="text" placeholder="20" className="account-form_input" {...field} />
+                <Input type="text" placeholder={storageCapacity} className="account-form_input" {...field} />
               </FormControl>
             </FormItem>
           )}
@@ -111,7 +117,7 @@ function CreateStorage({ id, client, storages }: Props) {
                 Street Name
               </FormLabel>
               <FormControl>
-                <Input type="text" placeholder="Kuusikuja" className="account-form_input" {...field} />
+                <Input type="text" placeholder={streetName} className="account-form_input" {...field} />
               </FormControl>
             </FormItem>
           )}
@@ -125,7 +131,7 @@ function CreateStorage({ id, client, storages }: Props) {
                 City
               </FormLabel>
               <FormControl>
-                <Input type="text" placeholder="Espoo" className="account-form_input" {...field} />
+                <Input type="text" placeholder={city} className="account-form_input" {...field} />
               </FormControl>
             </FormItem>
           )}
@@ -139,7 +145,7 @@ function CreateStorage({ id, client, storages }: Props) {
                 Postcode
               </FormLabel>
               <FormControl>
-                <Input type="text" className="account-form_input" {...field} />
+                <Input type="text" placeholder={postcode} className="account-form_input" {...field} />
               </FormControl>
             </FormItem>
           )}
@@ -153,7 +159,7 @@ function CreateStorage({ id, client, storages }: Props) {
                 Delivery Instructions
               </FormLabel>
               <FormControl>
-                <Input type="text" placeholder="Door code, how to access etc" className="account-form_input" {...field} />
+                <Input type="text" placeholder={deliveryInstructions} className="account-form_input" {...field} />
               </FormControl>
             </FormItem>
           )}
@@ -167,17 +173,17 @@ function CreateStorage({ id, client, storages }: Props) {
                 Note
               </FormLabel>
               <FormControl>
-                <Input type="text" placeholder="Extra information" className="account-form_input" {...field} />
+                <Input type="text" placeholder={note} className="account-form_input" {...field} />
               </FormControl>
             </FormItem>
           )}
         />
         <Button type="submit" className="bg-primary-500">
-          Submit
+          Submit Changes
         </Button>
       </form>
     </Form>
   );
 }
 
-export default CreateStorage;
+export default UpdateStorage;

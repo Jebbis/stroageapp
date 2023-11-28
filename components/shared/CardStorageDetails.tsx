@@ -4,12 +4,9 @@ import DeliveryHistory from "@/components/cards/DeliveryHistory";
 
 async function CardDetails(id) {
   console.log("Fetching details for: " + id.id);
+  console.log("Fetching details for: " + id);
   const storageObject = await fetchStorageDetails(id);
-  // {
-  //   storageObject.map((storageObject) => storageObject.storages.map((storageArray) => storageArray.deliverys.map((deliveryArray) =>
-  //     console.log(deliveryArray)
-  //   )))
-  // }
+
   return (
     <div>
       <div className="flex rounded-xl h-full dark:bg-gray-800 bg-dark-2 p-8 flex-col">
@@ -44,11 +41,10 @@ async function CardDetails(id) {
               )}
             </div>
           </h2>
-          {/*           <div className=" ml-5 w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-green-500 text-white flex-shrink-0"></div>
-           */}{" "}
+          {" "}
         </div>
         <a
-          href={"/edit/"}
+          href={"/edit/" + id.id}
           className="text-light-2 hover:text-red-500 inline-flex items-center border-2 rounded-lg p-3 mt-5"
         >
           Edit
