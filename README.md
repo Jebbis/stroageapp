@@ -3,7 +3,7 @@
 Admin Dashboard app for use with storage related information.
 
 App avaiable here (for some time) [https://varasto-app.vercel.app/](https://varasto-app.vercel.app/)
-![image](https://github.com/Skoivumaki/varasto_app/assets/123396118/cf7b7bec-7c10-4e30-8254-94735493a553)
+![image](https://github.com/Skoivumaki/varasto_app/assets/123396118/0f2fc5b9-3db4-4ebc-8dea-e387a803133d)
 
 Most used dependencies:
 Next.js 13
