@@ -20,3 +20,5 @@ npm run build
 npm run start
 ```
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the app.
+
+For Postman API routes to work add routes to ignoredRoutes. See middleware.ts:7
