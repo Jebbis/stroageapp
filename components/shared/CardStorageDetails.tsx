@@ -49,6 +49,12 @@ async function CardDetails(id) {
         >
           Edit
         </a>
+        <a
+          href={"/storages/remove/" + id.id}
+          className="text-light-2 hover:text-red-500 inline-flex items-center border-2 rounded-lg p-3 mt-5"
+        >
+          Remove
+        </a>
       </div>
     </div>
   );

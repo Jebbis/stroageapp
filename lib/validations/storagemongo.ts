@@ -10,5 +10,4 @@ export const StorageValidation = z.object({
   note: z.string().nonempty(),
 });
 
-
 console.log("Zod Schema loaded.");

@@ -15,7 +15,6 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { StorageValidation } from "@/lib/validations/storagemongo";
 import { updateStorage } from "@/lib/actions/storage.actions";
 
@@ -47,8 +46,8 @@ function UpdateStorage({ id, client, storageName, storageCapacity, streetName, c
   });
 
   const onSubmit = async (values: z.infer<typeof StorageValidation>) => {
+    alert("asdf");
     try {
-
       const storageData = {
         storageName: values.storageName,
         storageCapacity: values.storageCapacity,
@@ -66,10 +65,10 @@ function UpdateStorage({ id, client, storageName, storageCapacity, streetName, c
       router.push("/customers");
     } catch (error) {
       if (error instanceof z.ZodError) {
-        // Log Zod validation errors
-        console.error("Zod Validation Errors:", error.errors);
+        // Log Zod validation errors. Doesnt actually work.
+        console.log("Zod Validation Errors:", error.errors);
       } else {
-        console.error("Error submitting form:", error);
+        console.log("Error submitting form:", error);
       }
     }
   };
@@ -103,7 +102,7 @@ function UpdateStorage({ id, client, storageName, storageCapacity, streetName, c
                 Storage Capacity
               </FormLabel>
               <FormControl>
-                <Input type="text" placeholder={storageCapacity} className="account-form_input" {...field} />
+                <Input type="text" placeholder={"" + storageCapacity} className="account-form_input" {...field} />
               </FormControl>
             </FormItem>
           )}

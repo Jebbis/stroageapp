@@ -63,8 +63,18 @@ export async function createCustomer(storageData) {
 }
 export async function createStorage(storageData, clientName) {
 
-    const storageQuery = await Storage.updateOne({ clientName: clientName }, { $push: { storages: storageData } }, { upsert: false });
+    const storageQuery = await Storage.updateOne({ clientName: clientName },
+        { $push: { storages: storageData } }, { upsert: false });
     console.log("ModifiedCount: " + storageQuery.modifiedCount);
     console.log("MatchedCount: " + storageQuery.matchedCount);
     console.log("ClientName: " + clientName);
+}
+export async function removeStorage(id) {
+    console.log("Removing entry: " + id)
+    const storageQuery = await Storage.updateOne({ "storages._id": id }, {
+        $pull: { storages: { _id: id } }
+    });
+    console.log({ storages: [{ _id: id }] });
+    console.log("ModifiedCount: " + storageQuery.modifiedCount);
+    console.log("MatchedCount: " + storageQuery.matchedCount);
 }
