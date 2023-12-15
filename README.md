@@ -44,23 +44,11 @@
 
 
 ## Setup
-To run this project you need Convex, Clerk and Edge Store accounts and setup environments to get secret keys
+To run this project you need Mongodb and Clerk accounts and setup environments to get secret keys
 
-Cloning the repository `git clone https://github.com/Jebbis/Notion.git`
+Cloning the repository `git clone https://github.com/Jebbis/storageapp.git`
 
 Install dependecies `npm i`
-
-Setup .env.local file 
-```
-CONVEX_DEPLOYMENT=
-NEXT_PUBLIC_CONVEX_URL=
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
-CLERK_SECRET_KEY=
-EDGE_STORE_ACCESS_KEY=
-EDGE_STORE_SECRET_KEY=
-```
-
-Start Convex `npx convex dev`
 
 Start the app `npm run dev`
 
@@ -72,12 +60,11 @@ Project is:  _complete_
 ## Room for Improvement
 
 Further development:
-- Create more custom editor stylings
+- Make the authentication and user management system better
+- UI fixes
+- Cleaning the code
+- New delivery feature
 
-
-## Acknowledgements
-- This project was based on [this tutorial](https://www.youtube.com/watch?v=0OaDyjB9Ib8).
-  
 
 ## Contact
 [LinkedIn](https://www.linkedin.com/in/lasse-h%C3%A4m%C3%A4l%C3%A4inen-09b869181/)
